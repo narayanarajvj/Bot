@@ -1,0 +1,103 @@
+body {
+    /*font-family: sans-serif;*/
+    background-color: black;
+}
+h1
+{
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+}
+h3
+{
+    color: black;
+    font-size: 20px;
+    margin-top: 3px;
+    text-align: center;
+}
+#chatbox
+{
+    background-color: black ;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+#textInput {
+    width: 87%;
+    border: none;
+    font-family: monospace;
+    /*font-size: 20px;*/
+    /*margin-bottom: 5px;*/
+    /*padding: 6px;*/
+    /*background-color: #e5e5e5;*/
+    /*color: black;*/
+}
+#buttonInput {
+    font-family: monospace;
+    font-size: 17px;
+    margin-bottom: 5px;
+    /*padding: 5px 10px;*/
+    /*background-color: beige;*/
+}
+/*#buttonInput:hover {*/
+/*    background-color: #009688;*/
+/*    color: #e5e5e5;*/
+/*}*/
+.userText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+.userText span {
+    background-color: #009688;
+    padding: 10px;
+    border-radius: 2px;
+}
+.botText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+.botText span {
+    padding: 10px;
+    border-radius: 2px;
+}
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}
+/*.footer {*/
+/*    position: -webkit-sticky;*/
+/*    position: sticky;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    opacity: 1;*/
+/*    color: -moz-visitedhyperlinktext;*/
+/*    background-color: rgba(1, 1, 1, 0);*/
+/*    margin-top: 25px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.link a{*/
+/*    color: dodgerblue;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.link a:hover{*/
+/*    color: -webkit-activelink;*/
+/*}*/

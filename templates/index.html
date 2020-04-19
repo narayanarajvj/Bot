@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CHITTI - The Doctor Bot</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body style="font-family: sans-serif;">
+        <h1 style="font-family: Georgia, serif; color: #EF5350">CHITTI</h1>
+        <hr style=" width: 150px; border-top-width: 0px; margin-top: 2px; margin-bottom: 2px;">
+        <p style="font-size: 15px; text-align: center; margin-top: 0px; color: aliceblue;margin-bottom: 0px;">The Doctor Bot</p>
+        <hr style=" width: 150px; border-top-width: 0px; margin-top: 2px; margin-bottom: 2px;">
+
+            <div id="chatbox">
+                <p class="botText"><span style="background-color: crimson;">My name is CHITTI, the Doctor Bot.</span></p>
+                <p class="botText"><span style="background-color: crimson;">I will answer your queries related to COVID-19 Disease.</span></p>
+                <p class="botText"><span style="background-color: crimson;">If you want to end the chat, type Bye!</span></p>
+            </div>
+            <div id="userInput">
+                <input id="textInput" type="text" name="msg" placeholder="Type here.." style="font-size: 20px; margin-bottom: 5px; padding: 6px; background-color: #e5e5e5; color: black; border-bottom: none;">
+                <input id="buttonInput" type="submit" value="Send" style="padding: 5px 10px; background-color: beige;">
+            </div>
+            <div>
+                <div class="footer" style="position: -webkit-sticky;
+                                           position: sticky;
+                                           left: 0;
+                                           bottom: 0;
+                                           width: 100%;
+                                           text-align: center;
+                                           opacity: 1;
+                                           color: -moz-visitedhyperlinktext;
+                                           background-color: rgba(1, 1, 1, 0);
+                                           margin-top: 25px;
+                                           margin-bottom: 10px;">
+                    <p class="link"><a href="https://www.linkedin.com/in/narayana-raj-g-7050391a5" target="_blank" style="color: dodgerblue; text-decoration: none;">~Narayana Raj~</a></p>
+                </div>
+            </div>
+            <script>
+                function getBotResponse() {
+                    var rawText = $("#textInput").val();
+                    var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+                    $("#textInput").val("");
+                    $("#chatbox").append(userHtml);
+                    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+                    $.get("/get", { msg: rawText }).done(function(data) {
+                        var botHtml = '<p class="botText"><span style="background-color: crimson;">' + data + '</span></p>';
+                        $("#chatbox").append(botHtml);
+                        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+                    });
+                    }
+                    $("#textInput").keypress(function(e) {
+                        if(e.which == 13) {
+                            getBotResponse();
+                        }
+                    });
+                    $("#buttonInput").click(function() {
+                        getBotResponse();
+                    })
+            </script>
+
+    </body>
+</html>
